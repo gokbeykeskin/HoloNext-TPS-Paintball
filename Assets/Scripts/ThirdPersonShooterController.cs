@@ -9,9 +9,12 @@ using Photon;
 using Photon.Pun;
 public class ThirdPersonShooterController : MonoBehaviour
 {
+
     [HideInInspector]
     public static Vector3[] spawnPoints = {new Vector3(-0.23f,1f,16.3f),new Vector3(-0.23f,1f,-18.2f),new Vector3(-12.4f,1f,0f),new Vector3(14f,1f,0f)};
-    
+    [HideInInspector] 
+    public bool inWaitingRoom=false;
+
     [Header("Mouse Sensitivity Options")]
     [SerializeField] private float normalSensitivity = 1f;
     [SerializeField] private float aimSensitivity = 0.6f;
@@ -131,9 +134,11 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     public IEnumerator Respawn(){
         if(!view.IsMine) yield break;
+        inWaitingRoom = true;
         int index = Random.Range(0,3);
         transform.position = new Vector3(-67.80f,0,19.44f); //waiting room
         yield return new WaitForSeconds(5f);
+        inWaitingRoom=false;
         transform.position = spawnPoints[index]; //waiting room
         view.RPC("ResetHP",RpcTarget.All);
     }

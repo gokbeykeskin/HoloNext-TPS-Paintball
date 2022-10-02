@@ -9,8 +9,10 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
     [SerializeField] int health = 100;
     [SerializeField] Slider healthBar;
     PhotonView view;
+    ThirdPersonShooterController thirdPersonShooterController;
     void Awake()
     {
+        thirdPersonShooterController = GetComponent<ThirdPersonShooterController>();
         view = GetComponent<PhotonView>();
     }
 
@@ -34,9 +36,9 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
     }
 
     public void Harm(int damage){ 
+            if(thirdPersonShooterController.inWaitingRoom) return;
             health-=damage;
             if(view.IsMine) view.RPC("UpdateHealthBar",RpcTarget.All);
-            Debug.Log("Health:"+health);
     }
 
     [PunRPC]
