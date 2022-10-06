@@ -929,8 +929,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: {fileID: 782616455}
-  panel: {fileID: 1809522156}
-  buttonText: {fileID: 1722577375}
+  joiningPanel: {fileID: 1809522156}
+  joinButtonText: {fileID: 1722577375}
 --- !u!1 &270386302 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2404807515589324170, guid: 362667b52d8ea484a8f88a578df2d4b2, type: 3}
@@ -1521,7 +1521,7 @@ GameObject:
   - component: {fileID: 782616456}
   - component: {fileID: 782616455}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: NameInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1696,7 +1696,7 @@ GameObject:
   - component: {fileID: 789868842}
   - component: {fileID: 789868841}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: JoinCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3606,7 +3606,7 @@ GameObject:
   - component: {fileID: 1741490800}
   - component: {fileID: 1741490799}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CrosshairCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

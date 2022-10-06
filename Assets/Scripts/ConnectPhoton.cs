@@ -9,8 +9,10 @@ using TMPro;
 public class ConnectPhoton : MonoBehaviourPunCallbacks
 {
     [SerializeField] TMP_InputField name;
-    [SerializeField] GameObject panel;
-    [SerializeField] TMP_Text buttonText;
+    [SerializeField] GameObject joiningPanel;
+    [SerializeField] TMP_Text joinButtonText;
+    GameObject player;
+
     // Start is called before the first frame update
 
     public override void OnConnectedToMaster()
@@ -37,16 +39,15 @@ public class ConnectPhoton : MonoBehaviourPunCallbacks
     {
         CreatePlayer();
     }
-    GameObject player;
     void CreatePlayer(){
         int index = Random.Range(0,3);
-        player = PhotonNetwork.Instantiate("PlayerArmature",ThirdPersonShooterController.spawnPoints[index],Quaternion.identity,0,null);
+        player = PhotonNetwork.Instantiate("PlayerArmature",SpawnPoints.spawnPoints[index],Quaternion.identity,0,null);
         
-        panel.SetActive(false);
+        joiningPanel.SetActive(false);
     }
 
     public void Join(){
-        buttonText.text = "Joining...";
+        joinButtonText.text = "Joining...";
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.NickName = name.text;//lgn_usrname_input.text;
         PhotonNetwork.GameVersion = "0.0.1";//MasterManager.GameSettings.GameVersion;

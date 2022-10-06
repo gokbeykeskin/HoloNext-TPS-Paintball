@@ -844,6 +844,7 @@ GameObject:
   - component: {fileID: 3868486881509735306}
   - component: {fileID: 4033156139275291112}
   - component: {fileID: 1313533642961345041}
+  - component: {fileID: 4234126191760848008}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1102,13 +1103,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cc070519100d34180f6ce4fdeaff42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inWaitingRoom: 0
+  damage: 20
   normalSensitivity: 1
   aimSensitivity: 0.6
   aim: {fileID: 2895838628708690151}
   bodyAim: {fileID: 2895838628819157023}
-  followcam: {fileID: 3411894471618739369, guid: bc82b52c29f37cb478c7f26c45d88a82, type: 3}
-  aimcam: {fileID: 3954845645116030998, guid: 56dcf4071087d6646ad8a35cbdc8b9dc, type: 3}
   camShakeIntensity: 0.5
   aimColliderLayerMask:
     serializedVersion: 2
@@ -1286,7 +1285,6 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: -2144901726280589200}
   - {fileID: 3868486881509735306}
-  - {fileID: 4033156139275291112}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1320,6 +1318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthBar: {fileID: 6000799105111820942}
+  inWaitingRoom: 0
 --- !u!114 &1313533642961345041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,6 +1333,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 2895838627716343114}
   healthBar: {fileID: 6000799105111820942}
+--- !u!114 &4234126191760848008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548120332487958279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee029afa6f1b1d4599130a27625ff28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followcam: {fileID: 3411894471618739369, guid: bc82b52c29f37cb478c7f26c45d88a82, type: 3}
+  aimcam: {fileID: 3954845645116030998, guid: 56dcf4071087d6646ad8a35cbdc8b9dc, type: 3}
 --- !u!1 &1608930457488838825
 GameObject:
   m_ObjectHideFlags: 0
@@ -6082,14 +6095,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f28b08f1f7ef1d47bb300f0a28b19ca, type: 3}
---- !u!4 &3439251063805558232 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f28b08f1f7ef1d47bb300f0a28b19ca, type: 3}
-  m_PrefabInstance: {fileID: 2895838627806239283}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2662045410103912290 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7f28b08f1f7ef1d47bb300f0a28b19ca, type: 3}
+  m_PrefabInstance: {fileID: 2895838627806239283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3439251063805558232 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f28b08f1f7ef1d47bb300f0a28b19ca, type: 3}
   m_PrefabInstance: {fileID: 2895838627806239283}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2895838627806239288

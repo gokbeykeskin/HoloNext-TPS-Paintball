@@ -12,6 +12,10 @@ public class CharacterUILookAtCam : MonoBehaviour
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private Slider healthBar;
 
+    void Awake()
+    {
+        view = GetComponent<PhotonView>();
+    }
 
     // Start is called before the first frame update
     void Start()
